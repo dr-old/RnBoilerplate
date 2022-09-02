@@ -1,16 +1,16 @@
 import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import {color} from '../utils';
-import {ChatPage, HomePage, SettingPage} from '../containers/page';
+import {Chat, Home, Setting} from '../containers/pages';
+import {color} from '../utils/styles';
 
 const Tab = createBottomTabNavigator();
 
 export default function TabStack() {
   const tabBar = [
-    {name: 'HomeTab', icon: 'home', comp: HomePage},
-    {name: 'ChatTab', icon: 'comment', comp: ChatPage},
-    {name: 'SettingsTab', icon: 'cog', comp: SettingPage},
+    {name: 'HomeTab', icon: 'home', comp: Home},
+    {name: 'ChatTab', icon: 'comment', comp: Chat},
+    {name: 'SettingTab', icon: 'cog', comp: Setting},
   ];
 
   return (
@@ -29,10 +29,10 @@ export default function TabStack() {
           margin: 10,
           borderRadius: 10,
         },
-        tabBarActiveTintColor: color.biru,
-        tabBarActiveBackgroundColor: color.biruEmpat,
-        tabBarInactiveTintColor: color.abu,
-        tabBarInactiveBackgroundColor: color.putih,
+        tabBarActiveTintColor: color.blue,
+        tabBarActiveBackgroundColor: color.blue4,
+        tabBarInactiveTintColor: color.grey,
+        tabBarInactiveBackgroundColor: color.white,
       })}>
       {tabBar.map(item => (
         <Tab.Screen
@@ -42,8 +42,8 @@ export default function TabStack() {
           options={{
             headerShown: false,
             tabBarShowLabel: false,
-            tabBarIcon: ({color}) => (
-              <FontAwesome5 name={item.icon} color={color} size={20} />
+            tabBarIcon: ({clr}) => (
+              <FontAwesome5 name={item.icon} color={clr} size={20} />
             ),
           }}
         />
