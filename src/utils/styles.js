@@ -48,7 +48,12 @@ const styles = StyleSheet.create({
   textSemiBoldItalic: {fontFamily: 'Poppins-SemiBoldItalic'},
   textThin: {fontFamily: 'Poppins-Thin'},
   textThinItalic: {fontFamily: 'Poppins-ThinItalic'},
-  textBase: (size, clr, type, transform) => [
+  textBase: (
+    size = 13,
+    clr = color.grey2,
+    type = 'textMedium',
+    transform = 'capitalize',
+  ) => [
     styles[type],
     {
       fontSize: size,
