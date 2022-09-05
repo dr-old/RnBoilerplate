@@ -48,11 +48,11 @@ const styles = StyleSheet.create({
   textSemiBoldItalic: {fontFamily: 'Poppins-SemiBoldItalic'},
   textThin: {fontFamily: 'Poppins-Thin'},
   textThinItalic: {fontFamily: 'Poppins-ThinItalic'},
-  textBase: (size, color, type, transform) => [
+  textBase: (size, clr, type, transform) => [
     styles[type],
     {
       fontSize: size,
-      color: color,
+      color: clr,
       textTransform: transform,
     },
   ],
