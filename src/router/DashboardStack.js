@@ -19,7 +19,7 @@ function DashboardStack() {
             key={item.name}
             name={item.name}
             component={item.comp}
-            options={{headerShown: false}}
+            options={{headerShown: true}}
           />
         );
       })}
