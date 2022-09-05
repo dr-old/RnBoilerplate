@@ -1,6 +1,6 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Typography} from '../containers/pages';
+import {Form, Typography} from '../containers/pages';
 import TabStack from './TabStack';
 
 const Stack = createNativeStackNavigator();
@@ -10,6 +10,7 @@ function DashboardStack() {
     {name: 'Home', comp: TabStack}, // if you can use tab bottom navigation
     // {name: 'Home', comp: Home}, // if you cannot use tab bottom navigation
     {name: 'Typography', comp: Typography},
+    {name: 'Form', comp: Form},
   ];
   return (
     <Stack.Navigator initialRouteName="Home">
