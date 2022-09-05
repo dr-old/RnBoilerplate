@@ -29,6 +29,7 @@ export default function TabStack() {
           margin: 10,
           borderRadius: 10,
         },
+
         tabBarActiveTintColor: color.blue,
         tabBarActiveBackgroundColor: color.blue4,
         tabBarInactiveTintColor: color.grey,
@@ -42,8 +43,8 @@ export default function TabStack() {
           options={{
             headerShown: false,
             tabBarShowLabel: false,
-            tabBarIcon: ({clr}) => (
-              <FontAwesome5 name={item.icon} color={clr} size={20} />
+            tabBarIcon: ({color}) => (
+              <FontAwesome5 name={item.icon} color={color} size={20} />
             ),
           }}
         />

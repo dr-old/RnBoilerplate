@@ -24,6 +24,7 @@ function Home() {
           flexWrap: 'wrap',
         }}>
         <ButtonIcon
+          outline={true}
           type="primary"
           name="home"
           size={20}
@@ -36,6 +37,7 @@ function Home() {
           onClick={() => console.log('success')}
         />
         <ButtonIcon
+          outline={true}
           type="warning"
           name="home"
           size={20}
@@ -48,6 +50,7 @@ function Home() {
           onClick={() => console.log('default')}
         />
         <ButtonIcon
+          outline={true}
           type="danger"
           name="home"
           size={20}
@@ -109,6 +112,7 @@ function Home() {
           flexWrap: 'wrap',
         }}>
         <ButtonLabel
+          outline={true}
           type="primary"
           label="Primary"
           onClick={() => console.log('primary')}
@@ -119,6 +123,7 @@ function Home() {
           onClick={() => console.log('success')}
         />
         <ButtonLabel
+          outline={true}
           type="warning"
           label="warning"
           onClick={() => console.log('warning')}
@@ -129,6 +134,7 @@ function Home() {
           onClick={() => console.log('default')}
         />
         <ButtonLabel
+          outline={true}
           type="danger"
           label="danger"
           onClick={() => console.log('danger')}
@@ -180,6 +186,12 @@ function Home() {
         solid={true}
         label="go to typography"
         onClick={() => navigation.navigate('Typography')}
+      />
+      <ButtonLabel
+        type="success"
+        solid={true}
+        label="go to form"
+        onClick={() => navigation.navigate('Form')}
       />
     </View>
   );
