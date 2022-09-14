@@ -1,21 +1,21 @@
 import * as React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {color, styles} from '../../../utils/styles';
-import {InputText} from '../../../components/atoms';
+import {Divider, InputText} from '../../../components/atoms';
 import {FormInput} from '../../../components/molecules';
 
 function Form() {
   const navigation = useNavigation();
   const [input, setInput] = React.useState('');
   return (
-    <View
+    <ScrollView
       style={{
         flex: 1,
         backgroundColor: color.white,
-        alignItems: 'center',
-        justifyContent: 'center',
       }}>
+      <Text style={styles.textBase(20, color.blue)}>Input Text</Text>
+      <Divider height={10} />
       <FormInput
         label="label"
         placeholder="Input text outline with label"
@@ -28,6 +28,30 @@ function Form() {
         type="outline"
         value={input}
         onChangeText={value => setInput(value)}
+      />
+      <FormInput
+        placeholder="Input text outline + disabled + without label + button"
+        type="outline"
+        value={input}
+        onChangeText={value => setInput(value)}
+        disabled={true}
+        icon={{
+          name: 'chevron-right',
+          color: color.red,
+          onClick: () => console.log('onclick'),
+        }}
+      />
+      <FormInput
+        placeholder="Input text outline + without label + button"
+        type="solid"
+        value={input}
+        onChangeText={value => setInput(value)}
+        disabled={true}
+        icon={{
+          name: 'chevron-right',
+          color: color.red,
+          onClick: () => console.log('onclick'),
+        }}
       />
       <FormInput
         label="label"
@@ -43,7 +67,16 @@ function Form() {
         value={input}
         onChangeText={value => setInput(value)}
       />
-    </View>
+      <FormInput
+        placeholder="Input text multiline solid without label"
+        type="solid"
+        value={input}
+        onChangeText={value => setInput(value)}
+        multiline={true}
+      />
+      <Divider height={10} mTop={10} mBot={10} bgColor={color.white2} />
+      <Text style={styles.textBase(20, color.blue)}>Radio Button</Text>
+    </ScrollView>
   );
 }
 
