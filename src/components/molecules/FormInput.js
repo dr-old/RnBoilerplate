@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {styles, color} from '../../utils/styles';
-import {Divider, InputText} from '../atoms';
+import {ButtonIcon, Divider, InputText} from '../atoms';
 
 function FormInput({
   label,
@@ -20,6 +20,8 @@ function FormInput({
   refInput,
   onKeyPress,
   onSubmitEditing,
+  multiline,
+  icon,
 }) {
   let brcolor = '';
   let bgcolor = 'transparent';
@@ -34,19 +36,7 @@ function FormInput({
     padhrz = 10;
   }
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        borderColor: brcolor,
-        borderBottomWidth: 1,
-        borderRadius: brradius,
-        paddingHorizontal: padhrz,
-        marginHorizontal: 17,
-        marginBottom: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: bgcolor,
-      }}>
+    <View style={stylesCust.inputText(brcolor, brradius, padhrz, bgcolor)}>
       {label && (
         <>
           <Text style={styles.textBase()}>{label} :</Text>
@@ -54,6 +44,7 @@ function FormInput({
         </>
       )}
       <InputText
+        myHeight={multiline ? 100 : null}
         textRight={textRight}
         value={value}
         placeholder={placeholder}
@@ -62,7 +53,21 @@ function FormInput({
         refInput={refInput}
         onKeyPress={onKeyPress}
         onSubmitEditing={onSubmitEditing}
+        multiline={multiline}
       />
+      {icon?.name ? (
+        <ButtonIcon
+          type={{
+            backgroundColor: 'transparent',
+            borderColor: 'transparent',
+            color: icon?.color ? icon.color : color.blue,
+          }}
+          style={stylesCust.inputIcon}
+          name={icon.name}
+          size={20}
+          onClick={icon.onClick}
+        />
+      ) : null}
     </View>
   );
 }
@@ -76,12 +81,27 @@ const stylesCust = StyleSheet.create({
     color: color.grey2,
     backgroundColor: color.white2,
   }),
-  divInput: {
-    marginBottom: 10,
+  inputText: (
+    borderColor,
+    borderRadius,
+    paddingHorizontal,
+    backgroundColor,
+  ) => ({
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    borderColor: borderColor,
     borderBottomWidth: 1,
+    borderRadius: borderRadius,
+    paddingHorizontal: paddingHorizontal,
+    marginHorizontal: 17,
+    marginBottom: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: backgroundColor,
+  }),
+  inputIcon: {
+    paddingLeft: 17,
+    marginVertical: 10,
+    justifyContent: 'center',
   },
 });
 

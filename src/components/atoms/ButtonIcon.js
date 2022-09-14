@@ -32,10 +32,14 @@ function ButtonIcon({
     bgcolor = color.orange2;
     brcolor = color.orange2;
     textcolor = color.orange;
-  } else {
+  } else if (type === 'default') {
     bgcolor = color.white2;
     brcolor = color.white2;
     textcolor = color.grey;
+  } else {
+    bgcolor = type.backgroundColor;
+    brcolor = type.borderColor;
+    textcolor = type.color;
   }
   if (solid) {
     brcolor = textcolor;

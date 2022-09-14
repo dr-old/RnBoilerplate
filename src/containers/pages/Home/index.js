@@ -24,6 +24,16 @@ function Home() {
           flexWrap: 'wrap',
         }}>
         <ButtonIcon
+          type={{
+            backgroundColor: 'transparent',
+            borderColor: 'transparent',
+            color: color.blue2,
+          }}
+          name="home"
+          size={20}
+          onClick={() => console.log('danger')}
+        />
+        <ButtonIcon
           outline={true}
           type="primary"
           name="home"
