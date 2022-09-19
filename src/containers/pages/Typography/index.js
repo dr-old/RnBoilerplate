@@ -80,7 +80,7 @@ function Typography() {
         I'm Jason Voorhees
       </Text>
       <Text
-        style={styles.textBase(20, color.blue, 'textReguler', 'capitalize')}>
+        style={styles.textBase(20, color.blue, 'textRegular', 'capitalize')}>
         I'm Jason Voorhees
       </Text>
       <Text

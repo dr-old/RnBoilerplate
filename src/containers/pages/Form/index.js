@@ -13,8 +13,11 @@ function Form() {
       style={{
         flex: 1,
         backgroundColor: color.white,
+        paddingVertical: 17,
       }}>
-      <Text style={styles.textBase(20, color.blue)}>Input Text</Text>
+      <Text style={[{alignSelf: 'center'}, styles.textBase(20, color.blue)]}>
+        Input Text
+      </Text>
       <Divider height={10} />
       <FormInput
         label="label"
@@ -75,7 +78,6 @@ function Form() {
         multiline={true}
       />
       <Divider height={10} mTop={10} mBot={10} bgColor={color.white2} />
-      <Text style={styles.textBase(20, color.blue)}>Radio Button</Text>
     </ScrollView>
   );
 }
