@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   textLightItalic: {fontFamily: 'Poppins-LightItalic'},
   textMedium: {fontFamily: 'Poppins-Medium'},
   textMediumItalic: {fontFamily: 'Poppins-MediumItalic'},
-  textReguler: {fontFamily: 'Poppins-Reguler'},
+  textRegular: {fontFamily: 'Poppins-Regular'},
   textSemiBold: {fontFamily: 'Poppins-SemiBold'},
   textSemiBoldItalic: {fontFamily: 'Poppins-SemiBoldItalic'},
   textThin: {fontFamily: 'Poppins-Thin'},
