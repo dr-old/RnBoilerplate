@@ -2,7 +2,8 @@ import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {Chat, Home, Setting} from '../containers/pages';
-import {color} from '../utils/styles';
+import {color as clr} from '../utils/styles';
+import {Platform} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,9 +16,9 @@ export default function TabStack() {
 
   return (
     <Tab.Navigator
-      screenOptions={({route}) => ({
+      screenOptions={() => ({
         tabBarStyle: {
-          height: 60,
+          height: Platform.OS === 'ios' ? 90 : 60, // for android 60
           borderTopWidth: 0,
           elevation: 0, // for Android
           shadowOffset: {
@@ -30,10 +31,10 @@ export default function TabStack() {
           borderRadius: 10,
         },
 
-        tabBarActiveTintColor: color.blue,
-        tabBarActiveBackgroundColor: color.blue4,
-        tabBarInactiveTintColor: color.grey,
-        tabBarInactiveBackgroundColor: color.white,
+        tabBarActiveTintColor: clr.blue,
+        tabBarActiveBackgroundColor: clr.blue4,
+        tabBarInactiveTintColor: clr.grey,
+        tabBarInactiveBackgroundColor: clr.white,
       })}>
       {tabBar.map(item => (
         <Tab.Screen
